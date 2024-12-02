@@ -19,7 +19,8 @@ public class CA2 {
      */
     public static void main(String[] args) {
         // System.out.println(checkArrayForDuplicates());
-        multiplicationTable();
+        // multiplicationTable();
+        diagonalSum();
         // bubbleSort();
     }
     
@@ -65,6 +66,54 @@ public class CA2 {
         // Display multiplication table output
         System.out.println("Your multiplication table looks the following:");
         displayMatrix(matrix);
+    }
+    
+    // Task 3: Diagonal Sum of a Matrix
+    private static void diagonalSum() {
+        Scanner sc = new Scanner(System.in);
+        
+        // Ask user for the number of rows and columns in matrix
+        System.out.println("Enter number of matrix rows:");
+        int rows = sc.nextInt();
+        
+        System.out.println("Enter number of matrix columns:");
+        int cols = sc.nextInt();
+        
+        // Setup initial variables
+        int[][] matrix = new int[rows][cols];
+        int mainDiagonalSum = 0;
+        int secondaryDiagonalSum = 0;
+        
+        // Use loop to populate matrix with user data
+        System.out.println("Please enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+        
+        // Display matrix
+        System.out.println("Your matrix is:");
+        displayMatrix(matrix);
+        
+        // Loop through matrix to calculate main and secondary diagonal sums
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (i == j) {
+                    mainDiagonalSum += matrix[i][j];
+                }
+                
+                if (j == (cols - i - 1)) {
+                    secondaryDiagonalSum += matrix[i][j];
+                }
+            }
+        }
+        
+        // Display results to the user
+        System.out.println("The sum of the main diagonal of this matrix is:");
+        System.out.println(mainDiagonalSum);
+        System.out.println("The sum of the secondary diagonal of this matrix is:");
+        System.out.println(secondaryDiagonalSum);
     }
     
     // Task 5: Bubble Sort - Sorting an Array
