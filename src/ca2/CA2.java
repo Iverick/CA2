@@ -19,8 +19,8 @@ public class CA2 {
      */
     public static void main(String[] args) {
         // System.out.println(checkArrayForDuplicates());
-        
-        bubbleSort();
+        multiplicationTable();
+        // bubbleSort();
     }
     
     // Task 1: Array Search – Find the First Repeated Element
@@ -42,6 +42,29 @@ public class CA2 {
         
         System.out.println("");
         return "No repeated elements found.";
+    }
+    
+    // Task 2: Multiplication Table Using 2D Array
+    private static void multiplicationTable() {
+        Scanner sc = new Scanner(System.in);
+        
+        // Ask user for multiplication table size
+        System.out.println("Enter size of multiplication table:");
+        int size = sc.nextInt();
+        
+        // Create an empty 2D array of required size
+        int[][] matrix = new int[size][size];
+        
+        // Loop through the array fields and populate them with proper values
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = (i + 1) * (j + 1);
+            }
+        }
+        
+        // Display multiplication table output
+        System.out.println("Your multiplication table looks the following:");
+        displayMatrix(matrix);
     }
     
     // Task 5: Bubble Sort - Sorting an Array
@@ -103,5 +126,15 @@ public class CA2 {
         }
         
         return inputArray;
+    }
+    
+    private static void displayMatrix(int[][] matrix) {
+        // Helper method iterates over matrix fields and displays their values on the screen
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
     }
 }
