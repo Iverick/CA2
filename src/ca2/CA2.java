@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package ca2;
 
 import java.util.HashSet;
@@ -15,6 +11,10 @@ import java.util.Set;
 public class CA2 {
 
     /**
+     * Link to Github repo - https://github.com/Iverick/CA2
+     * Link to CA2 file - https://github.com/Iverick/CA2/blob/master/src/ca2/CA2.java
+     *
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
